@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Bani Amer | Software Engineer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Inter - Closest to Apple SF Pro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- GSAP & ScrollTrigger for Apple-style Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        apple: {
+                            black: '#000000',
+                            dark: '#0a0a0c',
+                            card: '#121216',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            text: '#f5f5f7',
+                            muted: '#86868b',
+                            blue: '#2997ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f5f7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Apple Glassmorphism Navbar */
+        .apple-glass {
+            background: rgba(15, 15, 18, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Apple Text Gradients */
+        .text-gradient-silver {
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(90deg, #2997ff 0%, #64d2ff 50%, #5e5ce6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Bento Card with Mouse Spotlight Effect */
+        .bento-card {
+            position: relative;
+            background: #101014;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px) scale(1.005);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .bento-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(
+                600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(41, 151, 255, 0.09),
+                transparent 40%
+            );
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bento-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Subtle Ambient Background Glow */
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(41, 151, 255, 0.14) 0%, rgba(94, 92, 230, 0.05) 45%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #2c2c2e; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #48484a; }
+    </style>
+</head>
+<body class="selection:bg-apple-blue selection:text-white">
+
+    <!-- Floating Apple-Style Navbar -->
+    <header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="apple-glass rounded-full px-6 py-3 flex items-center gap-8 text-sm font-medium shadow-2xl">
+            <a href="#hero" class="text-white font-semibold tracking-tight hover:text-apple-blue transition-colors">Ahmad.</a>
+            <div class="hidden md:flex items-center gap-6 text-apple-muted">
+                <a href="#philosophy" class="hover:text-white transition-colors">Philosophy</a>
+                <a href="#foundation" class="hover:text-white transition-colors">Foundation</a>
+                <a href="#projects" class="hover:text-white transition-colors">42 Projects</a>
+            </div>
+            <a href="#contact" class="bg-white text-black px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-opacity-90 transition-all">
+                Contact
+            </a>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 overflow-hidden">
+        <div class="ambient-glow top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+        <div id="hero-content" class="relative z-10 max-w-4xl mx-auto">
+            <!-- Status Pill -->
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full apple-glass text-xs font-mono text-apple-muted mb-8 hero-anim">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>42 Network Cadet • Problem Solver</span>
+            </div>
+
+            <!-- Main Title -->
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[1.05] mb-6 hero-anim">
+                <span class="text-gradient-silver">Engineering from</span><br>
+                <span class="text-gradient-blue">the ground up.</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-lg sm:text-xl md:text-2xl text-apple-muted max-w-2xl mx-auto font-normal leading-relaxed mb-10 hero-anim">
+                Hi, I'm <span class="text-white font-medium">Ahmad Bani Amer</span>. I build software with deep attention to memory, algorithmic efficiency, and clean architecture—bridging low-level systems with modern engineering.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap justify-center items-center gap-4 hero-anim">
+                <a href="#projects" class="bg-apple-blue hover:bg-blue-500 text-white font-medium px-8 py-3.5 rounded-full transition-all shadow-lg shadow-blue-500/20">
+                    Explore 42 Projects
+                </a>
+                <a href="#foundation" class="apple-glass hover:bg-white/10 text-white font-medium px-8 py-3.5 rounded-full transition-all">
+                    My Engineering Path
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+            <span class="text-[11px] font-mono uppercase tracking-widest text-apple-muted">Scroll to explore</span>
+            <div class="w-5 h-8 rounded-full border border-white/20 flex justify-center p-1">
+                <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHILOSOPHY SECTION (Apple Scroll-Scrubbed Text Reveal) -->
+    <section id="philosophy" class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="space-y-6">
+            <p class="text-xs font-mono uppercase tracking-widest text-apple-blue">01 / The Philosophy</p>
+            <h2 id="reveal-text" class="text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.18] tracking-tight text-white/20">
+                Great software isn’t built on shortcuts. It’s forged by understanding how the machine actually thinks—mastering pointers, memory allocation, and divide-and-conquer logic before writing a single line of code.
+            </h2>
+        </div>
+    </section>
+
+    <!-- FOUNDATION & EDUCATION (Apple Bento Grid) -->
+    <section id="foundation" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16 reveal-up">
+            <p class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-3">02 / The Foundation</p>
+            <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-gradient-silver">Two rigorous paths. One mindset.</h2>
+            <p class="text-apple-muted text-lg mt-3 max-w-2xl">
+                Combining peer-driven, low-level systems engineering with structured algorithmic problem solving.
+            </p>
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            
+            <!-- Card 1: 42 Network (7 Cols) -->
+            <div class="bento-card md:col-span-7 p-8 sm:p-10 flex flex-col justify-between reveal-up">
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-white/10 text-white">Systems & Peer Learning</span>
+                        <span class="text-2xl font-black tracking-tighter text-white font-mono">42</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">42 Network — Common Core</h3>
+                    <p class="text-apple-muted leading-relaxed mb-6">
+                        Successfully survived <strong class="text-white">The Piscine</strong>—an intensive month-long coding bootcamp in C and Unix Shell—and advanced into the <strong class="text-white">Common Core</strong> curriculum. Operating in a 100% teacherless, project-based environment governed by strict code standards (<code class="text-apple-blue">Norminette</code>), zero memory leaks, and rigorous peer-to-peer evaluations.
+                    </p>
+                </div>
+
+                <div class="relative z-10 pt-6 border-t border-white/10 flex flex-wrap gap-2">
+                    <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 text-gray-300">Unix / POSIX</span>
+                    <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 text-gray-300">Low-Level C</span>
+                    <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 text-gray-300">Memory Management</span>
+                    <span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 text-gray-300">Git Workflows</span>
+                </div>
+            </div>
+
+            <!-- Card 2: Programming Advices (5 Cols) -->
+            <div class="bento-card md:col-span-5 p-8 sm:p-10 flex flex-col justify-between reveal-up">
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="px-3 py-1 rounded-full text-xs font-mono bg-apple-blue/20 text-apple-blue">Structured Roadmap</span>
+                        <span class="text-xs font-mono text-apple-muted">Course 07 / 24</span>
+                    </div>
+                    <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4">Programming Advices</h3>
+                    <p class="text-apple-muted leading-relaxed mb-6">
+                        Following Dr. Mohammed Abu-Hadhoud’s foundational engineering roadmap. Reached <strong class="text-white">Course 07 (Algorithms & Problem Solving Level 3)</strong>, focusing on building rock-solid analytical thinking before jumping into high-level frameworks.
+                    </p>
+                </div>
+
+                <!-- Interactive Roadmap Progress Visual -->
+                <div class="relative z-10 bg-black/50 p-4 rounded-2xl border border-white/5">
+                    <div class="flex justify-between text-xs font-mono mb-2">
+                        <span class="text-white">Phase 1: Core Foundations</span>
+                        <span class="text-apple-blue">In Progress (Course 07)</span>
+                    </div>
+                    <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden mb-3">
+                        <div class="h-full bg-gradient-to-r from-apple-blue to-indigo-500 rounded-full" style="width: 35%;"></div>
+                    </div>
+                    <p class="text-[11px] font-mono text-apple-muted">
+                        ✓ C++ L1 & L2 • ✓ Pointers & Memory • ✓ Problem Solving L1–L3
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3: Core Technical Arsenal (12 Cols) -->
+            <div class="bento-card md:col-span-12 p-8 sm:p-10 reveal-up">
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <p class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-2">Under the Hood</p>
+                        <h3 class="text-2xl font-bold text-white">Core Engineering Stack</h3>
+                        <p class="text-apple-muted text-sm mt-1">Tools and paradigms I use daily to write clean, maintainable, and fast code.</p>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 font-mono text-sm text-white">C / C++</div>
+                        <div class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 font-mono text-sm text-white">Python</div>
+                        <div class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 font-mono text-sm text-white">Data Structures & Algorithms</div>
+                        <div class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 font-mono text-sm text-white">Pointers & Dynamic Memory</div>
+                        <div class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 font-mono text-sm text-white">Linux / Bash / Makefiles</div>
+                        <div class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 font-mono text-sm text-white">Divide & Conquer</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 42 PROJECTS SECTION (Ready for Step 2) -->
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16 reveal-up">
+            <p class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-3">03 / Selected Works</p>
+            <h2 class="text-4xl sm:text-5xl font-bold tracking-tight text-gradient-silver">Built at 42 Network.</h2>
+            <p class="text-apple-muted text-lg mt-3 max-w-2xl">
+                Every project is engineered from scratch without external libraries, adhering to strict memory and performance constraints.
+            </p>
+        </div>
+
+        <!-- Projects Grid (We will populate this with your exact projects in the next step!) -->
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Project Placeholder 1 -->
+            <div class="bento-card p-8 flex flex-col justify-between reveal-up">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-apple-blue">42 Core Project</span>
+                        <span class="text-xs font-mono text-apple-muted">C / Makefile</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Ready for Your First Project</h3>
+                    <p class="text-apple-muted text-sm leading-relaxed mb-6">
+                        Send me your list of completed 42 projects in our chat, and we will transform this grid into an interactive showcase for each project.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs font-mono text-white">
+                    <span>Memory Safe • Norminette Compliant</span>
+                    <span class="text-apple-blue">View on GitHub →</span>
+                </div>
+            </div>
+
+            <!-- Project Placeholder 2 -->
+            <div class="bento-card p-8 flex flex-col justify-between reveal-up">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-white/10 text-emerald-400">Algorithms & Problem Solving</span>
+                        <span class="text-xs font-mono text-apple-muted">C++ / Logic</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Ready for Next Project</h3>
+                    <p class="text-apple-muted text-sm leading-relaxed mb-6">
+                        We will customize each card with its technical highlights, architecture details, and direct links to your repositories.
+                    </p>
+                </div>
+                <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs font-mono text-white">
+                    <span>Clean Architecture</span>
+                    <span class="text-apple-blue">View on GitHub →</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="py-24 px-6 border-t border-white/10 text-center">
+        <div class="max-w-3xl mx-auto reveal-up">
+            <p class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-4">04 / What's Next</p>
+            <h2 class="text-4xl sm:text-6xl font-bold tracking-tight text-gradient-silver mb-6">Let’s build something extraordinary.</h2>
+            <p class="text-apple-muted text-lg mb-10">
+                Always open to connecting with fellow engineers, discussing low-level systems, or exploring new opportunities.
+            </p>
+            <div class="flex justify-center gap-4 mb-16">
+                <a href="https://github.com/" target="_blank" class="bg-white text-black font-semibold px-7 py-3 rounded-full hover:bg-opacity-90 transition-all">
+                    GitHub Profile
+                </a>
+                <a href="mailto:your.email@example.com" class="apple-glass text-white font-semibold px-7 py-3 rounded-full hover:bg-white/10 transition-all">
+                    Send an Email
+                </a>
+            </div>
+            <p class="text-xs text-apple-muted font-mono">
+                Designed & Engineered by Ahmad Bani Amer. Inspired by Apple Design.
+            </p>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS FOR APPLE ANIMATIONS -->
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Hero Entrance Animation
+        gsap.from(".hero-anim", {
+            y: 40,
+            opacity: 0,
+            duration: 1.1,
+            stagger: 0.15,
+            ease: "power3.out"
+        });
+
+        // 2. Hero Scale & Fade Out on Scroll (Classic Apple Product Page Effect)
+        gsap.to("#hero-content", {
+            scrollTrigger: {
+                trigger: "#hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            },
+            scale: 0.92,
+            opacity: 0,
+            y: -60
+        });
+
+        // 3. Word-by-Word Scroll Illumination in Philosophy Section
+        const revealText = document.getElementById("reveal-text");
+        const words = revealText.innerText.split(" ");
+        revealText.innerHTML = words.map(word => `<span class="inline-block opacity-20 transition-opacity duration-200 mr-2">${word}</span>`).join("");
+
+        gsap.to("#reveal-text span", {
+            scrollTrigger: {
+                trigger: "#philosophy",
+                start: "top 75%",
+                end: "bottom 55%",
+                scrub: 0.5
+            },
+            opacity: 1,
+            color: "#f5f5f7",
+            stagger: 0.1
+        });
+
+        // 4. Smooth Reveal-Up for Bento Cards & Sections
+        gsap.utils.toArray(".reveal-up").forEach((elem) => {
+            gsap.from(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.9,
+                ease: "power3.out"
+            });
+        });
+
+        // 5. Interactive Mouse Spotlight on Bento Cards
+        document.querySelectorAll(".bento-card").forEach((card) => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>
