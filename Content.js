@@ -80,10 +80,12 @@ const CONTENT = {
     title: "Let’s build something extraordinary.",
     text:
       "Always open to connecting with fellow engineers, discussing low-level systems, or exploring new opportunities.",
-    githubUrl: "https://github.com/",           // غيّره لرابطك
-    emailUrl: "mailto:your.email@example.com",  // غيّره لإيميلك
+    githubUrl: "[https://github.com/Ahmadalameri-0](https://github.com/Ahmadalameri-0)",
+    emailUrl: "mailto:ahmadbaniamra@gmail.com",
+    linkedinUrl: "https://www.linkedin.com/in/ahmad-bani-amer-9329a237b/",
     githubLabel: "GitHub Profile",
     emailLabel: "Send an Email",
+    linkedinLabel: "LinkedIn Profile",
     footer: "Designed & Engineered by Ahmad Bani Amer.",
   },
 };
