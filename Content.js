@@ -84,6 +84,6 @@ const CONTENT = {
     emailUrl: "mailto:your.email@example.com",  // غيّره لإيميلك
     githubLabel: "GitHub Profile",
     emailLabel: "Send an Email",
-    footer: "Designed & Engineered by Ahmad Bani Amer. Inspired by Apple Design.",
+    footer: "Designed & Engineered by Ahmad Bani Amer.",
   },
 };
