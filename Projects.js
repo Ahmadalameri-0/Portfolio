@@ -6,7 +6,23 @@
 // github: ضع "" إذا ما في رابط، فيختفي الزر
 // ============================================================
 const PROJECTS = [
-  // --- أمثلة فقط، استبدلها بمشاريعك الحقيقية ---
+    // --- أمثلة فقط، استبدلها بمشاريعك الحقيقية ---
+  {
+    name: "Libft (Custom C Library)",
+    type: "42",
+    stack: "C / Makefile",
+    description: "Recreated the standard C library from scratch. Implemented memory management, string manipulation, and linked list data structures to deeply understand low-level operations.",
+    highlights: "Memory Management • Pointers • Norminette Compliant",
+    github: "https://github.com/Ahmadalameri-0/libft",
+  },
+  {
+    name: "I/O Deep Dive: ft_printf & GNL",
+    type: "42",
+    stack: "C / System I/O",
+    description: "Rebuilt the standard printf using variadic arguments, and developed a memory-efficient line reader using static variables. Both repositories are available on my GitHub.",
+    highlights: "Variadic Functions • Static Variables",
+    github: "https://github.com/Ahmadalameri-0",
+  },
   {
     name: "Ready for Your First Project",
     type: "42",
