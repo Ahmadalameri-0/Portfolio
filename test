@@ -1,0 +1,601 @@
+// ============================================================
+// content.js 
+// ============================================================
+
+const CONTENT = {
+  nav: {
+    logo: "Ahmad.",
+    philosophy: "Philosophy",
+    foundation: "Foundation",
+    projects: "42 Projects",
+    contact: "Contact",
+  },
+
+  hero: {
+    pill: "42 Network Cadet • Problem Solver",
+    titleLine1: "Engineering from",
+    titleLine2: "the ground up.",
+    subtitle:
+      'Hi, I\'m <span class="text-white font-medium">Ahmad Bani Amer</span>. I build software with deep attention to memory, algorithmic efficiency, and clean architecture—bridging low-level systems with modern engineering.',
+    primaryCta: "Explore 42 Projects",
+    secondaryCta: "My Engineering Path",
+  },
+
+  philosophy: {
+    label: "01 / The Philosophy",
+    text:
+      "Great software isn’t built on shortcuts. It’s forged by understanding how the machine actually thinks—mastering pointers, memory allocation, and divide-and-conquer logic before writing a single line of code.",
+  },
+
+  foundation: {
+    label: "02 / The Foundation",
+    title: "Two rigorous paths. One mindset.",
+    subtitle:
+      "Combining peer-driven, low-level systems engineering with structured algorithmic problem solving.",
+
+    school42: {
+      badge: "Systems & Peer Learning",
+      title: "42 Network — Common Core",
+      text:
+        'Successfully survived <strong class="text-white">The Piscine</strong>—an intensive month-long coding bootcamp in C and Unix Shell—and advanced into the <strong class="text-white">Common Core</strong> curriculum. Operating in a 100% teacherless, project-based environment governed by strict code standards (<code class="text-apple-blue">Norminette</code>), zero memory leaks, and rigorous peer-to-peer evaluations.',
+      tags: ["Unix / POSIX", "Low-Level C", "Memory Management", "Git Workflows"],
+    },
+
+    advices: {
+      badge: "Structured Roadmap",
+      title: "Programming Advices",
+      text:
+        'Following Dr. Mohammed Abu-Hadhoud’s foundational engineering roadmap. Reached <strong class="text-white">Course 07 (Algorithms & Problem Solving Level 3)</strong>, focusing on building rock-solid analytical thinking before jumping into high-level frameworks.',
+      currentCourse: 7,
+      totalCourses: 24,
+      phase: "Phase 1: Core Foundations",
+      status: "In Progress (Course 07)",
+      done: "✓ C++ L1 & L2 • ✓ Pointers & Memory • ✓ Problem Solving L1–L3",
+    },
+
+    certs: {
+      badge: "Extra Curricular",
+      title: "Additional Certifications",
+      text: "Complementary specialized courses completed alongside my core engineering studies.",
+      items: [
+        {
+          name: "Programming in C",
+          issuer: "University of Michigan",
+          url: "https://coursera.org/share/10b74357248ecdd92d18a9218e3085f6"
+        },
+        {
+          name: "Exploring C",
+          issuer: "University of Michigan",
+          url: "https://coursera.org/share/1792c6028f1731a64d9cb6a857548bb5"
+        },
+        {
+          name: "Intro to Git and GitHub",
+          issuer: "Google",
+          url: "https://coursera.org/share/4a9e06a742bfe1b7552ed78b66283b07"
+        },
+        {
+          name: "Getting Started with Git",
+          issuer: "IBM",
+          url: "https://coursera.org/share/a59036a2ac1280a2e1fc38947c336f3a"
+        },
+        {
+          name: "Intro to Bash Shell Scripting",
+          issuer: "Coursera",
+          url: "https://coursera.org/share/2259a047d5aad5236847ecc98fb616d1"
+        },
+        {
+          name: "Bash Shell & Basic Scripting",
+          issuer: "Coursera",
+          url: "https://coursera.org/share/afc9f4b3089e65a29175331ee1cd4d2f"
+        }
+      ]
+    },
+
+    stack: {
+      label: "Under the Hood",
+      title: "Core Engineering Stack",
+      subtitle: "Tools and paradigms I use daily to write clean, maintainable, and fast code.",
+      items: [
+        "C / C++",
+        "Python",
+        "Data Structures & Algorithms",
+        "Pointers & Dynamic Memory",
+        "Linux / Bash / Makefiles",
+        "Divide & Conquer",
+      ],
+    },
+  },
+
+  projects: {
+    label: "03 / Selected Works",
+    title: "Built at 42 Network.",
+    subtitle:
+      "Every project is engineered from scratch without external libraries, adhering to strict memory and performance constraints.",
+  },
+
+  contact: {
+    label: "04 / What's Next",
+    title: "Let’s build something extraordinary.",
+    text:
+      "Always open to connecting with fellow engineers, discussing low-level systems, or exploring new opportunities.",
+    githubUrl: "[https://github.com/Ahmadalameri-0](https://github.com/Ahmadalameri-0)",
+    emailUrl: "mailto:ahmadbaniamra@gmail.com",
+    linkedinUrl: "https://www.linkedin.com/in/ahmad-bani-amer-9329a237b/",
+    githubLabel: "GitHub Profile",
+    emailLabel: "Send an Email",
+    linkedinLabel: "LinkedIn Profile",
+    footer: "Designed & Engineered by Ahmad Bani Amer.",
+  },
+};
+
+
+
+// ============================================================
+// projects.js
+// ============================================================
+const PROJECTS = [
+  {
+    name: "Libft (Custom C Library)",
+    type: "42",
+    stack: "C / Makefile",
+    description: "Recreated the standard C library from scratch. Implemented memory management, string manipulation, and linked list data structures to deeply understand low-level operations.",
+    highlights: "Memory Management • Pointers • Norminette Compliant",
+    github: "https://github.com/Ahmadalameri-0/libft",
+  },
+  {
+    name: "I/O Deep Dive: ft_printf & GNL",
+    type: "42",
+    stack: "C / System I/O",
+    description: "Rebuilt the standard printf using variadic arguments, and developed a memory-efficient line reader using static variables. Both repositories are available on my GitHub.",
+    highlights: "Variadic Functions • Static Variables",
+    github: "https://github.com/Ahmadalameri-0",
+  },
+  {
+    name: "Push_swap",
+    type: "algo",
+    stack: "C / Algorithms",
+    description: "An optimized data sorting project utilizing two stacks and a strict set of operations. Designed to sort numbers with the absolute minimum number of moves, emphasizing algorithmic efficiency.",
+    highlights: "Sorting Algorithms • Big O • Optimization",
+    github: "https://github.com/Ahmadalameri-0/Push_swap",
+  },
+  {
+    name: "Infrastructure Path: Inception",
+    type: "42",
+    stack: "Docker / SysAdmin / Networking",
+    description: "A journey starting with secure VM deployment (Born2beRoot) and TCP/IP subnetting (NetPractice), culminating in Inception: orchestrating a complete, secure microservices infrastructure (NGINX, WordPress, MariaDB) from scratch using Docker Compose.",
+    highlights: "Docker • System Administration • Subnetting",
+    github: "https://github.com/Ahmadalameri-0/Inception-42",
+  },
+  {
+    name: "Python Piscine",
+    type: "42",
+    stack: "Python / OOP",
+    description: "An intensive deep dive into modern Python. Mastered Object-Oriented Programming, abstract base classes, decorators, and generators to build scalable, robust architectures.",
+    highlights: "OOP • Decorators • Design Patterns",
+  },
+  {
+    name: "A-Maze-ing",
+    type: "algo",
+    stack: "Python / Pathfinding",
+    description: "A fully packaged terminal-based maze generator and solver. Implemented Depth-First Search (DFS) for generation and Breadth-First Search (BFS) for optimal path routing, featuring robust validation and custom UI themes.",
+    highlights: "DFS & BFS • Pydantic • Algorithm Design",
+    github: "https://github.com/Ahmadalameri-0/A-maze-ing",
+  },
+  {
+    name: "Pac-Man",
+    type: "algo",
+    stack: "Python / Pygame",
+    description: "A complete recreation of the classic arcade game. Engineered robust screen state management, game loops, and entity logic, ensuring flawless execution through strict static type checking (mypy).",
+    highlights: "Game Architecture • State Machines",
+    github: "https://github.com/Ahmadalameri-0/Pac-Man",
+    demo: "https://ahmadalameri-0.itch.io/pacman",
+  },
+  {
+    name: "Codexion",
+    type: "42",
+    stack: "C / POSIX Threads",
+    description: "A highly optimized multi-threaded concurrency simulator solving the Dining Philosophers problem. Engineered precise thread synchronization and deadlock prevention strategies using POSIX threads and mutexes.",
+    highlights: "Concurrency • Mutexes • Deadlock Prevention",
+    github: "https://github.com/Ahmadalameri-0/Codexion",
+  },
+];
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmad Bani Amer | Software Engineer</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts (Inter - Closest to Apple SF Pro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- GSAP & ScrollTrigger for Apple-style Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        apple: {
+                            black: '#000000',
+                            dark: '#0a0a0c',
+                            card: '#121216',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            text: '#f5f5f7',
+                            muted: '#86868b',
+                            blue: '#2997ff',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #f5f5f7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .apple-glass {
+            background: rgba(15, 15, 18, 0.72);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .text-gradient-silver {
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .text-gradient-blue {
+            background: linear-gradient(90deg, #2997ff 0%, #64d2ff 50%, #5e5ce6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .bento-card {
+            position: relative;
+            background: #101014;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px) scale(1.005);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .bento-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(
+                600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+                rgba(41, 151, 255, 0.09),
+                transparent 40%
+            );
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .bento-card:hover::before {
+            opacity: 1;
+        }
+
+        .ambient-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(41, 151, 255, 0.14) 0%, rgba(94, 92, 230, 0.05) 45%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #2c2c2e; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #48484a; }
+    </style>
+</head>
+<body class="selection:bg-apple-blue selection:text-white">
+
+    <header class="fixed top-5 left-0 right-0 z-50 flex justify-center px-4">
+        <nav class="apple-glass rounded-full px-6 py-3 flex items-center gap-8 text-sm font-medium shadow-2xl">
+            <a href="#hero" data-c="nav.logo" class="text-white font-semibold tracking-tight hover:text-apple-blue transition-colors"></a>
+            <div class="hidden md:flex items-center gap-6 text-apple-muted">
+                <a href="#philosophy" data-c="nav.philosophy" class="hover:text-white transition-colors"></a>
+                <a href="#foundation" data-c="nav.foundation" class="hover:text-white transition-colors"></a>
+                <a href="#projects" data-c="nav.projects" class="hover:text-white transition-colors"></a>
+            </div>
+            <a href="#contact" data-c="nav.contact" class="bg-white text-black px-4 py-1.5 rounded-full text-xs font-semibold hover:bg-opacity-90 transition-all"></a>
+        </nav>
+    </header>
+
+    <section id="hero" class="relative min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 overflow-hidden">
+        <div class="ambient-glow top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2"></div>
+
+        <div id="hero-content" class="relative z-10 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full apple-glass text-xs font-mono text-apple-muted mb-8 hero-anim">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span data-c="hero.pill"></span>
+            </div>
+
+            <h1 class="text-5xl sm:text-7xl md:text-8xl font-bold tracking-tight leading-[1.05] mb-6 hero-anim">
+                <span data-c="hero.titleLine1" class="text-gradient-silver"></span><br>
+                <span data-c="hero.titleLine2" class="text-gradient-blue"></span>
+            </h1>
+
+            <p data-c="hero.subtitle" class="text-lg sm:text-xl md:text-2xl text-apple-muted max-w-2xl mx-auto font-normal leading-relaxed mb-10 hero-anim"></p>
+
+            <div class="flex flex-wrap justify-center items-center gap-4 hero-anim">
+                <a href="#projects" data-c="hero.primaryCta" class="bg-apple-blue hover:bg-blue-500 text-white font-medium px-8 py-3.5 rounded-full transition-all shadow-lg shadow-blue-500/20"></a>
+                <a href="#foundation" data-c="hero.secondaryCta" class="apple-glass hover:bg-white/10 text-white font-medium px-8 py-3.5 rounded-full transition-all"></a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-60">
+            <span class="text-[11px] font-mono uppercase tracking-widest text-apple-muted">Scroll to explore</span>
+            <div class="w-5 h-8 rounded-full border border-white/20 flex justify-center p-1">
+                <div class="w-1 h-2 bg-white rounded-full animate-bounce"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philosophy" class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="space-y-6">
+            <p data-c="philosophy.label" class="text-xs font-mono uppercase tracking-widest text-apple-blue"></p>
+            <h2 id="reveal-text" data-c="philosophy.text" class="text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.18] tracking-tight text-white/20"></h2>
+        </div>
+    </section>
+
+    <section id="foundation" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16 reveal-up">
+            <p data-c="foundation.label" class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-3"></p>
+            <h2 data-c="foundation.title" class="text-4xl sm:text-5xl font-bold tracking-tight text-gradient-silver"></h2>
+            <p data-c="foundation.subtitle" class="text-apple-muted text-lg mt-3 max-w-2xl"></p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+
+            <div class="bento-card md:col-span-7 p-8 sm:p-10 flex flex-col justify-between reveal-up">
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-6">
+                        <span data-c="foundation.school42.badge" class="px-3 py-1 rounded-full text-xs font-mono bg-white/10 text-white"></span>
+                        <span class="text-2xl font-black tracking-tighter text-white font-mono">42</span>
+                    </div>
+                    <h3 data-c="foundation.school42.title" class="text-2xl sm:text-3xl font-bold text-white mb-4"></h3>
+                    <p data-c="foundation.school42.text" class="text-apple-muted leading-relaxed mb-6"></p>
+                </div>
+
+                <div id="school42-tags" class="relative z-10 pt-6 border-t border-white/10 flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="bento-card md:col-span-5 p-8 sm:p-10 flex flex-col justify-between reveal-up">
+                <div class="relative z-10">
+                    <div class="flex items-center justify-between mb-6">
+                        <span data-c="foundation.advices.badge" class="px-3 py-1 rounded-full text-xs font-mono bg-apple-blue/20 text-apple-blue"></span>
+                        <span id="course-count" class="text-xs font-mono text-apple-muted"></span>
+                    </div>
+                    <h3 data-c="foundation.advices.title" class="text-2xl sm:text-3xl font-bold text-white mb-4"></h3>
+                    <p data-c="foundation.advices.text" class="text-apple-muted leading-relaxed mb-6"></p>
+                </div>
+
+                <div class="relative z-10 bg-black/50 p-4 rounded-2xl border border-white/5">
+                    <div class="flex justify-between text-xs font-mono mb-2">
+                        <span data-c="foundation.advices.phase" class="text-white"></span>
+                        <span data-c="foundation.advices.status" class="text-apple-blue"></span>
+                    </div>
+                    <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden mb-3">
+                        <div id="progress-bar" class="h-full bg-gradient-to-r from-apple-blue to-indigo-500 rounded-full" style="width: 0%;"></div>
+                    </div>
+                    <p data-c="foundation.advices.done" class="text-[11px] font-mono text-apple-muted"></p>
+                </div>
+            </div>
+
+            <div class="bento-card md:col-span-12 p-8 sm:p-10 reveal-up">
+                <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                    <div>
+                        <p data-c="foundation.stack.label" class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-2"></p>
+                        <h3 data-c="foundation.stack.title" class="text-2xl font-bold text-white"></h3>
+                        <p data-c="foundation.stack.subtitle" class="text-apple-muted text-sm mt-1"></p>
+                    </div>
+                    <div id="stack-items" class="flex flex-wrap gap-3"></div>
+                </div>
+            </div>
+
+            <div class="bento-card md:col-span-12 p-6 sm:p-8 reveal-up bg-[#0a0a0c] border-white/5 shadow-none">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+                    <div>
+                        <p data-c="foundation.certs.badge" class="text-[10px] font-mono uppercase tracking-widest text-apple-muted mb-1"></p>
+                        <h3 data-c="foundation.certs.title" class="text-xl font-bold text-white/80"></h3>
+                    </div>
+                    <p data-c="foundation.certs.text" class="text-apple-muted text-xs max-w-md text-left md:text-right"></p>
+                </div>
+                <div id="cert-items" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="mb-16 reveal-up">
+            <p data-c="projects.label" class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-3"></p>
+            <h2 data-c="projects.title" class="text-4xl sm:text-5xl font-bold tracking-tight text-gradient-silver"></h2>
+            <p data-c="projects.subtitle" class="text-apple-muted text-lg mt-3 max-w-2xl"></p>
+        </div>
+
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </section>
+
+    <footer id="contact" class="py-24 px-6 border-t border-white/10 text-center">
+        <div class="max-w-3xl mx-auto reveal-up">
+            <p data-c="contact.label" class="text-xs font-mono uppercase tracking-widest text-apple-blue mb-4"></p>
+            <h2 data-c="contact.title" class="text-4xl sm:text-6xl font-bold tracking-tight text-gradient-silver mb-6"></h2>
+            <p data-c="contact.text" class="text-apple-muted text-lg mb-10"></p>
+            <div class="flex justify-center flex-wrap gap-4 mb-16">
+                <a id="github-link" data-c="contact.githubLabel" target="_blank" rel="noopener" class="bg-white text-black font-semibold px-7 py-3 rounded-full hover:bg-opacity-90 transition-all"></a>
+                <a id="linkedin-link" data-c="contact.linkedinLabel" target="_blank" rel="noopener" class="bg-[#0A66C2] text-white font-semibold px-7 py-3 rounded-full hover:bg-opacity-90 transition-all"></a>
+                <a id="email-link" data-c="contact.emailLabel" class="apple-glass text-white font-semibold px-7 py-3 rounded-full hover:bg-white/10 transition-all"></a>
+            </div>
+            <p data-c="contact.footer" class="text-xs text-apple-muted font-mono"></p>
+        </div>
+    </footer>
+
+    <script src="Content.js"></script>
+    <script src="Projects.js"></script>
+
+    <script>
+        const get = (obj, path) => path.split(".").reduce((o, k) => o && o[k], obj);
+
+        document.querySelectorAll("[data-c]").forEach((el) => {
+            el.innerHTML = get(CONTENT, el.dataset.c);
+        });
+
+        document.getElementById("school42-tags").innerHTML = CONTENT.foundation.school42.tags
+            .map((t) => `<span class="text-xs font-mono px-3 py-1.5 rounded-lg bg-white/5 text-gray-300">${t}</span>`)
+            .join("");
+
+        document.getElementById("stack-items").innerHTML = CONTENT.foundation.stack.items
+            .map((i) => `<div class="px-4 py-2.5 rounded-xl bg-white/5 border border-white/10 font-mono text-sm text-white">${i}</div>`)
+            .join("");
+
+        const adv = CONTENT.foundation.advices;
+        document.getElementById("course-count").textContent =
+            `Course ${String(adv.currentCourse).padStart(2, "0")} / ${adv.totalCourses}`;
+        document.getElementById("progress-bar").style.width =
+            `${Math.round((adv.currentCourse / adv.totalCourses) * 100)}%`;
+
+        document.getElementById("github-link").href = CONTENT.contact.githubUrl;
+        document.getElementById("email-link").href = CONTENT.contact.emailUrl;
+        document.getElementById("linkedin-link").href = CONTENT.contact.linkedinUrl;
+
+        if (CONTENT.foundation.certs) {
+            document.getElementById("cert-items").innerHTML = CONTENT.foundation.certs.items
+                .map((cert) => `
+                    <div class="flex items-center justify-between p-2.5 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors group">
+                        <div class="overflow-hidden pr-2">
+                            <p class="text-[12px] font-medium text-white/80 truncate">${cert.name}</p>
+                            <p class="text-[10px] font-mono text-apple-muted truncate">${cert.issuer}</p>
+                        </div>
+                        <a href="${cert.url}" target="_blank" rel="noopener" class="text-apple-muted group-hover:text-white text-[11px] hover:underline shrink-0 transition-colors">View ↗</a>
+                    </div>
+                `).join("");
+        }
+
+        const typeColor = { "42": "text-apple-blue", algo: "text-emerald-400" };
+        const typeLabel = { "42": "42 Core Project", algo: "Algorithms & Problem Solving" };
+
+        document.getElementById("projects-grid").innerHTML = PROJECTS.map((p) => `
+            <div class="bento-card p-8 flex flex-col justify-between reveal-up">
+                <div>
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-mono px-3 py-1 rounded-full bg-white/10 ${typeColor[p.type] || "text-white"}">${typeLabel[p.type] || "Project"}</span>
+                        <span class="text-xs font-mono text-apple-muted">${p.stack}</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">${p.name}</h3>
+                    <p class="text-apple-muted text-sm leading-relaxed mb-6">${p.description}</p>
+                </div>
+                <div class="pt-4 border-t border-white/10 flex justify-between items-center text-xs font-mono text-white">
+                    <span>${p.highlights}</span>
+                    <div class="flex gap-4">
+                        ${p.demo ? `<a href="${p.demo}" target="_blank" rel="noopener" class="text-emerald-400 hover:underline">Play Game 🎮</a>` : ""}
+                        ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" class="text-apple-blue hover:underline">GitHub →</a>` : ""}
+                    </div>
+                </div>
+    </script>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // 1. Hero Entrance Animation
+        gsap.from(".hero-anim", {
+            y: 40,
+            opacity: 0,
+            duration: 1.1,
+            stagger: 0.15,
+            ease: "power3.out"
+        });
+
+        // 2. Hero Scale & Fade Out on Scroll (Classic Apple Product Page Effect)
+        gsap.to("#hero-content", {
+            scrollTrigger: {
+                trigger: "#hero",
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            },
+            scale: 0.92,
+            opacity: 0,
+            y: -60
+        });
+
+        // 3. Word-by-Word Scroll Illumination in Philosophy Section
+        const revealText = document.getElementById("reveal-text");
+        const words = revealText.innerText.split(" ");
+        revealText.innerHTML = words.map(word => `<span class="inline-block opacity-20 transition-opacity duration-200 mr-2">${word}</span>`).join("");
+
+        gsap.to("#reveal-text span", {
+            scrollTrigger: {
+                trigger: "#philosophy",
+                start: "top 75%",
+                end: "bottom 55%",
+                scrub: 0.5
+            },
+            opacity: 1,
+            color: "#f5f5f7",
+            stagger: 0.1
+        });
+
+        // 4. Smooth Reveal-Up for Bento Cards & Sections
+        gsap.utils.toArray(".reveal-up").forEach((elem) => {
+            gsap.from(elem, {
+                scrollTrigger: {
+                    trigger: elem,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                },
+                y: 50,
+                opacity: 0,
+                duration: 0.9,
+                ease: "power3.out"
+            });
+        });
+
+        // 5. Interactive Mouse Spotlight on Bento Cards
+        document.querySelectorAll(".bento-card").forEach((card) => {
+            card.addEventListener("mousemove", (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            });
+        });
+    </script>
+</body>
+</html>

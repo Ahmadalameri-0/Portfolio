@@ -1,7 +1,7 @@
 // ============================================================
-// content.js — نصوص الصفحة. عدّل هنا فقط بدون لمس index.html
-// (النصوص تقبل HTML بسيط مثل <strong> و <code>)
+// content.js 
 // ============================================================
+
 const CONTENT = {
   nav: {
     logo: "Ahmad.",
@@ -46,11 +46,49 @@ const CONTENT = {
       title: "Programming Advices",
       text:
         'Following Dr. Mohammed Abu-Hadhoud’s foundational engineering roadmap. Reached <strong class="text-white">Course 07 (Algorithms & Problem Solving Level 3)</strong>, focusing on building rock-solid analytical thinking before jumping into high-level frameworks.',
-      currentCourse: 7,   // شريط التقدم يتحسب من هذين الرقمين
+      currentCourse: 8,
       totalCourses: 24,
       phase: "Phase 1: Core Foundations",
-      status: "In Progress (Course 07)",
+      status: "In Progress (Course 08)",
       done: "✓ C++ L1 & L2 • ✓ Pointers & Memory • ✓ Problem Solving L1–L3",
+    },
+
+    certs: {
+      badge: "Extra Curricular",
+        title: "Additional Certifications",
+      text: "Complementary specialized Coursera courses completed alongside my core engineering studies.",
+      items: [
+        {
+          name: "Programming in C",
+          issuer: "University of Michigan",
+          url: "https://coursera.org/share/1792c6028f1731a64d9cb6a857548bb5"
+        },
+        {
+          name: "Exploring C",
+          issuer: "University of Michigan",
+          url: "https://coursera.org/share/10b74357248ecdd92d18a9218e3085f6"
+        },
+          {
+          name: "Intro to Git and GitHub",
+          issuer: "Google",
+          url: "https://coursera.org/share/a59036a2ac1280a2e1fc38947c336f3a"
+        },
+        {
+          name: "Getting Started with Git",
+          issuer: "IBM",
+          url: "https://coursera.org/share/4a9e06a742bfe1b7552ed78b66283b07"
+        },
+        {
+          name: "Intro to Bash Shell Scripting",
+          issuer: "Coursera",
+          url: "https://coursera.org/share/2259a047d5aad5236847ecc98fb616d1"
+        },
+        {
+          name: "Bash Shell & Basic Scripting",
+          issuer: "Coursera",
+          url: "https://coursera.org/share/afc9f4b3089e65a29175331ee1cd4d2f"
+        }
+      ]
     },
 
     stack: {
