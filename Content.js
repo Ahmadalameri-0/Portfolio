@@ -7,7 +7,7 @@ const CONTENT = {
     logo: "Ahmad.",
     philosophy: "Philosophy",
     foundation: "Foundation",
-    projects: "42 Projects",
+    projects: "Projects",
     contact: "Contact",
   },
 
@@ -17,7 +17,7 @@ const CONTENT = {
     titleLine2: "the ground up.",
     subtitle:
       'Hi, I\'m <span class="text-white font-medium">Ahmad Bani Amer</span>. I build software with deep attention to memory, algorithmic efficiency, and clean architecture—bridging low-level systems with modern engineering.',
-    primaryCta: "Explore 42 Projects",
+    primaryCta: "Explore Projects",
     secondaryCta: "My Engineering Path",
   },
 
@@ -46,17 +46,17 @@ const CONTENT = {
       title: "Programming Advices",
       text:
         'Following Dr. Mohammed Abu-Hadhoud’s foundational engineering roadmap. Reached <strong class="text-white">Course 07 (Algorithms & Problem Solving Level 3)</strong>, focusing on building rock-solid analytical thinking before jumping into high-level frameworks.',
-      currentCourse: 8,
+      currentCourse: 9,
       totalCourses: 24,
       phase: "Phase 1: Core Foundations",
-      status: "In Progress (Course 08)",
+      status: "In Progress (Course 09)",
       done: "✓ C++ L1 & L2 • ✓ Pointers & Memory • ✓ Problem Solving L1–L3",
     },
 
     certs: {
-      badge: "Extra Curricular",
-        title: "Additional Certifications",
-      text: "Complementary specialized Coursera courses completed alongside my core engineering studies.",
+      badge: "The Origin",
+        title: "Where It All Began",
+      text: "My very first steps into tech. These foundational Coursera certificates sparked my passion for programming before diving into low-level software engineering.",
       items: [
         {
           name: "Programming in C",
@@ -108,9 +108,9 @@ const CONTENT = {
 
   projects: {
     label: "03 / Selected Works",
-    title: "Built at 42 Network.",
+    title: "Selected Projects.",
     subtitle:
-      "Every project is engineered from scratch without external libraries, adhering to strict memory and performance constraints.",
+      "A mix of systems, algorithms, and AI projects built through hands-on engineering.",
   },
 
   contact: {

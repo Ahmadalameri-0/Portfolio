@@ -3,6 +3,14 @@
 // ============================================================
 const PROJECTS = [
   {
+    name: "Call Me Maybe",
+    type: "ai",
+    stack: "Python / PyTorch / Transformers",
+    description: "Built schema-constrained function calling with Qwen3-0.6B. Token-level decoding keeps function names and arguments valid, then Pydantic validates the final JSON.",
+    highlights: "Qwen3 • Constrained Decoding • Pydantic",
+    github: "https://github.com/Ahmadalameri-0/call_me_maybe",
+  },
+  {
     name: "Libft (Custom C Library)",
     type: "42",
     stack: "C / Makefile",

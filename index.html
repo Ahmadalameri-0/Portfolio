@@ -162,7 +162,7 @@
     <section id="philosophy" class="py-32 px-6 max-w-5xl mx-auto">
         <div class="space-y-6">
             <p data-c="philosophy.label" class="text-xs font-mono uppercase tracking-widest text-apple-blue"></p>
-            <h2 id="reveal-text" data-c="philosophy.text" class="text-3xl sm:text-5xl md:text-6xl font-semibold leading-[1.18] tracking-tight text-white/20"></h2>
+            <h2 id="reveal-text" data-c="philosophy.text" class="text-2xl sm:text-4xl md:text-4xl font-semibold leading-[1.18] tracking-tight text-white/20"></h2>
         </div>
     </section>
 
@@ -223,7 +223,7 @@
             </div>
 
             <!-- Marginal Certifications Card -->
-            <div class="bento-card md:col-span-12 p-6 sm:p-8 reveal-up bg-[#0a0a0c] border-white/5 shadow-none">
+            <div class="bento-card md:col-span-12 p-6 sm:p-8 reveal-up bg-gradient-to-br from-[#241044] via-[#171323] to-[#0d0c12] border border-purple-500/50 shadow-xl shadow-black/30">
                 <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
                     <div>
                         <p data-c="foundation.certs.badge" class="text-[10px] font-mono uppercase tracking-widest text-apple-muted mb-1"></p>
@@ -303,8 +303,8 @@
                 `).join("");
         }
 
-        const typeColor = { "42": "text-apple-blue", algo: "text-emerald-400" };
-        const typeLabel = { "42": "42 Core Project", algo: "Algorithms & Problem Solving" };
+        const typeColor = { "42": "text-apple-blue", algo: "text-emerald-400", ai: "text-violet-400" };
+        const typeLabel = { "42": "42 Core Project", algo: "Algorithms & Problem Solving", ai: "AI & LLMs" };
 
         document.getElementById("projects-grid").innerHTML = PROJECTS.map((p) => `
             <div class="bento-card p-8 flex flex-col justify-between reveal-up">
