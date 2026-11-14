@@ -124,6 +124,6 @@ const CONTENT = {
     githubLabel: "GitHub Profile",
     emailLabel: "Send an Email",
     linkedinLabel: "LinkedIn Profile",
-    footer: "Designed & Engineered by Ahmad Bani Amer.",
+    footer: "Designed & Built by Ahmad Bani Amer × AI",
   },
 };
